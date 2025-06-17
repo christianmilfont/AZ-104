@@ -1,40 +1,97 @@
 # AZ-104
 ### Curso DIO para tirar certificação da AZ-104
-
-## Introdução ao CloudFirst:
-- Explorar os recursos que a nuvem pode oferecer antes de desenvolver seus projetos
-- Dentro do universo Cloud tem varias ferramentas que auxiliam para seu projeto ser mais escalável e possuir uma infraestrutura mais flexível
-- Ambiente muito rico e menos dependente de código
-
-## Cloud Native:
-- Aplicações desenvolvidas na WEB(banco de dados, api ...)
-- Vantagens de utilizar Cloud, ecossistema dentro de uma grande empresa, com suporte exemplo da Azure, com a Microsoft por tras
-- Empresas podem ser hibridas com On-Primeses e modelos Cloud
-
-## Cargo de Admin de servicos de Cloud(Cloud Manager):
-- Monitra outras pessoas usando a Azure ou servico da Cloud(MODELO ANTIGO)
-- Agora não precisamos de pessoas analsiando reports mas sim um Cloud Manager
-- Habilidades e responsabilidades:
-- Gerenciar acesso
-- Monitorar e criar relatorios inteligentes
-- Saber movimentar Backups
-- Garantir custos da Cloud de maneira monitorada
-- Precisa identificar gargalos
-- Como utilizar de maneira refinada suas opções de sistemas da sua Aplicação
-- Como gerar esse processo de Governança e controle dos recursos
-
 ### Objetivo geral:
 Executar os conhecimentos necessarios para o papel de administrador da Azure complementando as capacidades de gerenciar recursos, armazenamento, computação e redes virtuais em um ambiente nuvem!
 
 ### Conteúdo programático:
 1. Administrar Identidade
-2. Administrar Governança e Conformidade
-3. Administrar recursos Azure
-4. Administrar rede virtual
-5. Administrar conectividade entre sites
-6. Administrar gerenciamento de tráfego de rede
-7. Administrar o armazenamento do Azure
-8. Administrar máquinas virtuais
-9. Administrar soluções de computação PaaS
-10. Administrar proteção de dados
-11. Administrar monitoramento
+
+Como configurar o Microsoft Entra Id?
+1. Descrever os Benefécios e Recursos do Microsoft Entra Id
+2. Descrever os conceitos do Microsoft Entra ID
+3. Comparar o Microsoft Entra ID com os Active Directory Domains Services (Comparação da autenticação na nuvem e dos ambientes on-primeses)
+
+Como funciona os Planos e Preços do Microsoft Entra ID?
+1. Selecionar Planos e preços do Microsoft Entra ID
+2. Configurar Identidade de Dispositivo
+3. Implementar a Redefinição de Senha por Autoatendimento
+
+## Benefícios e recursos do Entra ID
+- Um conjunto de recursos de gerenciamento de identidades baseado em nuvem que permite gerenciar com segurança o acesso aos serviços do Azure para seus usuários
+- Entra ID é = Família de Produtos relacionados a Autenticação da Microsoft
+- Diferente das Árvores de ambientes on-primeses (os directorys, até mesmo o Azure tinha o Azure Directory) a Microsoft expandiu para uma switch de aplicações relacionadas aos nossos users
+- Exemplo disso é que se a pessoa tem o cargo de Admin de Usuarios, ela não precisa entrar em outros recursos mas sim pelo Entra ID
+
+![image](https://github.com/user-attachments/assets/bea7f8f8-2a43-4a5a-a825-e5c22472e952)
+Exemplo de modelo de autenticação que passa pelo que chamamos de "protocolo", nesse caso o Kerberos e o NTLM
+- No momento que solicita acesso, ele faz uma consulta pertinente ao seu ambiente, confere usuario e senha depois passa para autenticação
+- Nesse caso, seria a implementação do Windows Server e Active Directory que fazer esses conferes (modelo legado pois ja esta a muito tempo)
+- Mas saindo dos ambientes on-primeses e indo para nuvem, o novo representante é justamente o Entra ID
+- Trabalhando outros modelos de autenticação
+- Para que os dois modelos de autenticação se conversem, eles precisam do intermediário, o qual seria uma aplicação que faz a autenticação de usuários e grupos + Autoricação
+
+## Conceitos do Entra ID:
+```
+- Identidade  = um objeto que pode ser autenticado (algo ou alguem que pode ser)
+- Assinaturas do Azure= Usada para pagar pelos serviços e recursos de nuvem do Azure
+- Conta = Uma identidade que tenha dados associados a ela
+- Conta do Microsoft Entra ID = Identidade criada na Nuvem, sendo um serviço na nuvem do Microsoft ou alguma conta criada para finalidade específica
+- Locatário/Diretório = Vamos ter uma instancia dedicada e confiavel, podendo criar os meus recursos, mas sendo sempre uma unica instancia onde eu vou representar minha organização.
+Exemplo: criar uma conta no Microsoft ADD, automaticamente eu terei um dominio associado a essa conta.
+Podemos ter diretorios diferentes para separar os seviços,
+e nesse diretorios eu posso associar as Assinaturas do Azure
+```
+
+### Entra ID vs ADDs (Active Directory)
+- O Microsoft Entra ID é uma solução de identidade, centralizando o gerenciamento dos usuários, grupos e dispositivos do ambiente
+- Trabalha em cima de autenticação HTTP
+- Consutalndo usando a API REST sobre HTTP e HTTPS
+- Já que a maioria das aplicações usam o modelo de API's REST para fazer a conexão
+- Como visto anteriormente temos os protocolos HTTP E HTTPs atualizados como o SAML, a especificação Web Services Federation e o OpenID Connect para autenticação ( e o OAlth para autorização)
+- Inclui serviços de federação e muitos serviços de terceiros (como o proprio Facebook)
+- Autorizando a entrada pelo Facebook, um exemplo (BTC Buissness to Costumer)
+- Os usuários e grupos do Microsoft Entra ID são criados em uma estrutura plana(todos na mesma unidade "no mesmo barco"), deferente dos ADDS, não possuem Unidades Organizacionais (OUs) ou Obejtos de Política de Grupo (GPOs)
+
+## Planos e Preços do Entra ID
+4 modelos gratuitos: 
+- Gratuita
+- P1
+- P2
+- Governança
+![image](https://github.com/user-attachments/assets/caedb192-7be3-400d-b01c-4c2942eebdba)
+
+## Configurar identidades de dispositivo
+![image](https://github.com/user-attachments/assets/be3c2227-bccd-418d-900e-45a60b6c5264)
+- Suporta o Modelo BYOD ou Bring Your Own Device
+- Login de dispositivos registrados usando uma conta da Microsoft
+- Anexado a uma conta que concede acesso a recursos
+- Controle usando ferramentas de gerenciamento de dispositivos moveis (MDM), como o Microsoft Intune
+- SO - Windows 10+, iOS, Android e MacOS
+
+### Dispositivos Associados:
+![image](https://github.com/user-attachments/assets/550c6a60-ccbf-4341-9960-9fb90be98804)
+- Destinado a organizações que priorizam a nuvem ou apenas a nuvem
+- Dispositivos de prioridade da organização
+- Conta organizacional necessária
+- Pode usar políticas de acesso condicional
+- SO - dispositivos Windows 10+
+
+### Mais comum atualmente = Dispositivos Hibridos
+![image](https://github.com/user-attachments/assets/4a944a90-3fcf-441e-bd1f-fa0cf05d4565)
+- Comunicam no On-Primeses e na Nuvem
+- Possui aplicativos Win32 implantados nestes dispositivos
+- Continua usando Política de Grupo para gerenciar dispositivos
+- SO - dispositivos Windows 7+
+
+## Implementando o SSPR
+- Self Service
+- A redefinição de senha não necessariamente ficar dependente de um atendimento ao pessoal TI mas sim um autoatendimento
+- Escolher um numero de métodos de autenticação necessários e os métodos disponiveis
+- Exigir cadastro dos usuários no SSPR (mesmo processo do MFA)
+![image](https://github.com/user-attachments/assets/db4884f8-7a8f-4a5f-8cd3-f8f8efca2047)
+- Tela no qual esse processo de configuração (Admin de Redes)
+- Nessa tela mostra os métodos de autenticação (1 ou 2)
+- Modelos de autenticação SSPR:
+![image](https://github.com/user-attachments/assets/c1f61a04-a504-4ee8-9717-f16b99071cd9)
+- Perguntas podem ser de 3 a 5 a serem cadastradas
+- E quantas dessas perguntas podem aparecer depois 
