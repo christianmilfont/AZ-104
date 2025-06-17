@@ -94,4 +94,33 @@ e nesse diretorios eu posso associar as Assinaturas do Azure
 - Modelos de autenticação SSPR:
 ![image](https://github.com/user-attachments/assets/c1f61a04-a504-4ee8-9717-f16b99071cd9)
 - Perguntas podem ser de 3 a 5 a serem cadastradas
-- E quantas dessas perguntas podem aparecer depois 
+- E quantas dessas perguntas podem aparecer depois
+
+
+## Funcionalidades do Entra ID e criação de Contas de Usuário
+- Informações básicas
+![image](https://github.com/user-attachments/assets/79aa5173-ed9b-4ab2-ba67-ea20e24060c0)
+
+- O primary domain sempre sera um email opcional, nunca deixa de existir
+
+### Funcionalidades do Entra ID:
+- Users: da parte de user possui um Audit Logs, All users e reset de senha, ou seja, Logs e Resets de Senha(Self Service Password Reset SSPR)
+- Quando excluir um user existe um tempo de 30 dias para restaurar, fica tambem na func de Users
+- Também possui a parte de Grupos, esses grupos são diferente do ambiente on-primeses, podendo criar um grupo de Segurança(Atribuição de uma função) ou do Microsoft 365(interação com o pessoal da empresa, exemplo, grupo tecnologia, grupo relacionado para aqueles da área de tech)
+- Também temos as Roles e Acessos: pode dar o permisionamento, mas não o de acessar recursos
+- Access Review: Garante que as pessoa do meu time tenham o permisionamento que elas devem ter
+
+### Criado uma conta de user nova:
+![image](https://github.com/user-attachments/assets/86ed4fc6-5a59-4ef2-b625-86924474c16d)
+- Manter o autogenerate: ver qual a melhor opção para sua empresa, sendo anotar a senha ou voce criar a propria dele
+- Account Enabled: melhor deixar apenas na véspera da entrada dessa pessoa na empresa, pois mesmo com email e senha, se essa opção não estiver marcada, ela não consegue entrar
+#### Propriedades:
+![image](https://github.com/user-attachments/assets/ae3e6c63-953f-4c73-80e5-a6c277c58b56)
+![image](https://github.com/user-attachments/assets/95dd6f1a-3576-4226-bbe8-74453a6e4f0a)
+- Sempre melhor colocar o Usage Location, pois futuramente exigir uma autenticação para que os signins seja apenas no País do user, ou até mesmo um monitoramento desses signins
+
+#### Assignments:
+![image](https://github.com/user-attachments/assets/cebddf2b-6201-4f1d-9a73-2203c54aa723)
+
+
+
