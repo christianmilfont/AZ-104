@@ -150,3 +150,6 @@ e nesse diretorios eu posso associar as Assinaturas do Azure
 - Depois, voltar ao portal da 365 e remover o método de pagamento
 - Depois no portal Azure, remove a permissão de Global Administrator
  
+##  Unidades Administrativas
+- O mais perto de uma OU do Active Directory
+- Podendo dar a liberdade para a equipe local, o gestor de TI 
