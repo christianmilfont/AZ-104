@@ -123,4 +123,30 @@ e nesse diretorios eu posso associar as Assinaturas do Azure
 ![image](https://github.com/user-attachments/assets/cebddf2b-6201-4f1d-9a73-2203c54aa723)
 
 
+#### Ao criar um user externo, ele invita com um email:
+![image](https://github.com/user-attachments/assets/239fb6b6-fd4b-4cf5-a07c-a277720c755e)
 
+## Ativação da licensa Premium da Conta P2:
+- Necessita de uma conta nativa do meu Tenant (Locatorio)
+![image](https://github.com/user-attachments/assets/ba3cba5c-98aa-46bc-866d-e675f509c647)
+![image](https://github.com/user-attachments/assets/277758ab-24ec-4023-b05d-eb91677f4534)
+- Importante lembrar que o que querremos é o Manager Trial
+![image](https://github.com/user-attachments/assets/dd8e57e1-cf14-45c1-b129-06c1993bc869)
+![image](https://github.com/user-attachments/assets/aa2b5eae-3a1d-47c5-912b-efd97124acac)
+![image](https://github.com/user-attachments/assets/3c2c754d-c6a4-45b4-b78e-e6ad17f6269a)
+- Ele pede agora para adicionar informações
+- E adicionar Cobrança
+![image](https://github.com/user-attachments/assets/b3f39ebe-3a67-459f-b6b9-eccb41da9d49)
+- Da pra utilizar o CNPJ da Microsoft
+- Adicionar antes um método de pagamento
+![image](https://github.com/user-attachments/assets/7dd2b4ae-98af-49a0-945f-332958603739)
+
+### Resumo:
+- Adionar a conta interna User como Global Admin
+- Fazer Login com essa conta
+- Solicitar o Trial da P2
+- Configuração dos Dados
+- CNPJ pode utilizar o da própria Microsoft
+- Depois, voltar ao portal da 365 e remover o método de pagamento
+- Depois no portal Azure, remove a permissão de Global Administrator
+ 
