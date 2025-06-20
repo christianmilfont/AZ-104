@@ -153,3 +153,37 @@ e nesse diretorios eu posso associar as Assinaturas do Azure
 ##  Unidades Administrativas
 - O mais perto de uma OU do Active Directory
 - Podendo dar a liberdade para a equipe local, o gestor de TI 
+
+
+## Custom Domain Names:
+- Adicionar um novo nome de dominio
+![image](https://github.com/user-attachments/assets/b32e6517-497b-4076-aa19-e7fb0e597e52)
+![image](https://github.com/user-attachments/assets/14920c49-5faa-4eba-9e68-66db9378855b)
+- Microsft não te da o dominio so quando voce ja tem um
+- Temos dois modelos de escolha o Txt e o MX
+- Para que ele seja verificado, tem que adiconar informações que estão presentes na imagem acima
+- Porem relembrando, apenas registros de dominio ja comprados, serão aceitos e verificados, logo após sera adicionado ao ambiente
+
+## Configuração do SSPR
+- Modelo o qual permite o proprio user fazer a redefinição de senha e ativando tambem medidas de segurança para termos um ambiente mais seguro
+- Apenas pode ser habilitado quando tem a licensa P2
+- Podemos usar um modelos selecionado para um grupo de users, ou um modelo All que pode ser usado de forma global
+![image](https://github.com/user-attachments/assets/eceee973-ae1f-4f85-b435-c50ed1969480)
+- Ativar para todo mundo, pode ser complicado e estresssante
+- Podem ser requiridos UM ou DOIS metodos (cai em prova)
+![image](https://github.com/user-attachments/assets/dbe66a06-4ea4-4580-8188-e59adec7cd48)
+- Ele não permite o Mobile App Notification e o Office Phone pois ele nao pode ser apenas UM metodo
+- Entendidos como apenas UM metodo seriam o Mobile App Code e o Email
+- Para grandes ambientes, usar apenas UM metodo se torna mais pratico
+- O numero perguntas de segurança que tem para registrar são de 3 a 5
+- O numero de perrguntas de segurança que tem para requerer são de 3 a 5 tambem
+- Em questão de Compliance, perguntas são um contexto complicado por problemas pessoas e de vida
+- Melhor deixar sem e apenas saber que esse metodo existe e pode ser aplicado
+![image](https://github.com/user-attachments/assets/cc7c896e-aadd-4453-a6a7-6b4f0c229de2)
+- Já na parte de Registration, podemos colocar o numero de dias para o user reconfirmar suas infos e se eles precisam se registrar ao tentar se logar pela primeira vez
+![image](https://github.com/user-attachments/assets/eb2eb493-1e6e-4cd0-9946-ff1857c2310a)
+
+#### Password WriteBack = quando temos um ambiente replicando o On-Premises pra nuvem, não conseguimos levar o user da nuvem para o On-Premise, sempre o processo inverso, de dentro de "casa" para fora
+- Para habilitar o processo de redefinição, a senha é uma das unicas coisas que conseguimos fazer esse caminho "inverso"
+- Por conta do SSPR, disponiblizar o "On-premise integration"
+- Sem essa função, os usuarios nao poderiam ser criados direto na nuvem ou redefinidos, sempre do ambiente on-premise para nuvem nunca ao contrario
