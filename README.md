@@ -1,4 +1,4 @@
-# AZ-104
+![image](https://github.com/user-attachments/assets/28b8993d-7058-4260-a947-e4d2375f929c)# AZ-104
 ### Curso DIO para tirar certificação da AZ-104
 ### Objetivo geral:
 Executar os conhecimentos necessarios para o papel de administrador da Azure complementando as capacidades de gerenciar recursos, armazenamento, computação e redes virtuais em um ambiente nuvem!
@@ -165,6 +165,7 @@ e nesse diretorios eu posso associar as Assinaturas do Azure
 - Porem relembrando, apenas registros de dominio ja comprados, serão aceitos e verificados, logo após sera adicionado ao ambiente
 
 ## Configuração do SSPR
+- É necessário adicionar um registro TXT no provedor de domínio e verificar o domínio no portal do Microsoft Entra ID
 - Modelo o qual permite o proprio user fazer a redefinição de senha e ativando tambem medidas de segurança para termos um ambiente mais seguro
 - Apenas pode ser habilitado quando tem a licensa P2
 - Podemos usar um modelos selecionado para um grupo de users, ou um modelo All que pode ser usado de forma global
@@ -187,3 +188,50 @@ e nesse diretorios eu posso associar as Assinaturas do Azure
 - Para habilitar o processo de redefinição, a senha é uma das unicas coisas que conseguimos fazer esse caminho "inverso"
 - Por conta do SSPR, disponiblizar o "On-premise integration"
 - Sem essa função, os usuarios nao poderiam ser criados direto na nuvem ou redefinidos, sempre do ambiente on-premise para nuvem nunca ao contrario
+
+
+## Criando nosso Azure AD users
+- Podemos criar as roles:
+![image](https://github.com/user-attachments/assets/3a6b1d23-f952-43de-b99c-b5bd3cd154dc)
+- No caso, são permisionamentos, não atribuições de funções que façam com que este usuario tenha acesso a criação de outras coisas como um Resource Group
+- Neste caso, o permisionamento que demos foi o de administrar as configurações de contas e criar um novo user
+- No caso, estamos usando Cloud Only, criando os users apenas na nuvem, porém se tivessemos um Active Directory no On-premise, este user não existiria no ambiente físico
+- Grupos dinâmicos automaticamente adicionam ou removem usuários com base em atributos como departamento ou cargo, evitando erros humanos.
+## Criando Azure AD groups e assinalar membros dinâmicos
+- Para criarmos, precisamos do licensiamento
+- Precisamos atribuir essas licensas para os users
+![image](https://github.com/user-attachments/assets/1dd09d95-e29c-4285-9857-1327721fb637)
+- Criando os grupos de SEGURANÇA:
+![image](https://github.com/user-attachments/assets/a5ad50e2-36de-40e4-94da-656d88191d46)
+- Temos 3 tipos de assinalar os recursos:
+![image](https://github.com/user-attachments/assets/a1aaa6e8-4912-4532-9ad6-1fcd4315a90f)
+- O primeiro "Assigne", que vai adicioanr manualmente meus users
+- "Dynamic Users" = não precisa assinalar ninguem mas sim distipular uma rregra de quem vem para meu grupo
+- "Dynamic Device" = para Dispositivos
+- Se escolhermos o Dynamic User, precisamos registrar uma regra para quem vem para meu grupo:
+![image](https://github.com/user-attachments/assets/82354eb3-a7c6-4d14-8f74-3e0f3fcf6cf0)
+- Como modelo de organização, o comum é utilizarmos "JobTitle"
+![image](https://github.com/user-attachments/assets/988582a2-5572-4b11-9577-7ed2398c46be)
+- Lembrando que grupos que possuem a flag de Dynamic User, não conseguem assinalar ninguem manualmente, garantindo que não moverá ninguem
+- Não pode ter um grupo dinamico, onde eu movo usuarios manualmente
+
+- Dessa vez fazendo com um grupo Assigned:
+![image](https://github.com/user-attachments/assets/dcad6f11-0179-4565-b790-5b40313ed7bb)
+- Não consegue adicionar de outra forma sem ser manualmente
+
+
+ ## Criando e gerenciando um Azure AD Tenant
+- Podendo criar um modelo de Acitve Directory ou de B2C (Buissness to Costumer) mas tambem pode-se escutar a expressão B2B (Buissness to Buissness) já que nesse caso os dois estão vindo de uma empresa para outra
+![image](https://github.com/user-attachments/assets/4d82942b-2d2a-407d-828a-be268e3931fa)
+- B2B B2C Eu permito pessoas de outro diretorio acessar os dados da minha empresa
+
+## Manage Azure AD guest user
+- Apenas quem cria o Tenant é a unica pessoa que tem acesso a ele no primeiro momento, então apenas voce pode criar um User, de primeiro momento (pode cair em prova)
+![image](https://github.com/user-attachments/assets/b3f24a50-3611-4be0-8c7f-7749287c76f0)
+- Agora eu posso fazer essa conta ter o permisionamento invitando ele e trazendo ele agora para meu diretorio
+![image](https://github.com/user-attachments/assets/d9d7b1a5-7c0f-421a-92a0-2cc4ae742115)
+![image](https://github.com/user-attachments/assets/aa94a6bb-fe6a-427c-8ec3-01565f615b92)
+![image](https://github.com/user-attachments/assets/d8c1dc9c-5eac-4e31-a653-45cc8bda7b06)
+![image](https://github.com/user-attachments/assets/44c7c35d-f691-4e09-9bd5-a1a431ef65fc)
+![image](https://github.com/user-attachments/assets/bd01c11f-f89c-44ce-8b84-7cc053163d57)
+![image](https://github.com/user-attachments/assets/b23a0859-e3ec-45bf-86d3-d44cfea2cf57)
