@@ -137,13 +137,35 @@ Executar os conhecimentos necessarios para o papel de administrador da Azure com
 - Reader ou leitor, não tem permissao nenhuma, apenas le
 - Colaborador ou Contribuitor tem acesso de alteração, deletar adicionar, dentro do cenário, mas não tem como atribuir permisionamento a outras pessoas
 - Adicionando mais detalhes, vendo o slide acima, demonstra que ele em Actions tem o * que representa tudo, em NotActions, ele possui Authorization delete e Write, alem do elevar acesso, entendemos como estou dando acesso, tirando ou aumentando, que nesse caso ele é proibido
+- NotActions são subtraídos das Actions para definir a lista de operações permitidas.
+
 ### Criar uma atribuição de função
 ![image](https://github.com/user-attachments/assets/4b68007f-47b9-427e-8bc6-8b3e1f8468de)
 - Definição de função
 - Atribuição de função
 - Escopo
 - sempre mantendo o permisionamento mais granulado possivel
+### Atribuicao de funcao e tambem dentro de apenas UM RECURSO e sem ver os outros, deve-se colocar o user como proprietario do gurpo de recurso em especifico, ou seja, Atribua o Administrador como Proprietário do Grupo de Recursos.
+### Azure Blueprints é um conjunto repetível de ferramentas de governança que ajuda as equipes de desenvolvimento a construir e criar rapidamente novos ambientes, ao mesmo tempo que aderem à conformidade organizacional para acelerar o desenvolvimento e a implantação.
 
 ## Aplicar autenticação RBAC
 ![image](https://github.com/user-attachments/assets/bf215428-1850-4d19-ad4d-fc98d81cfc8e)
 - Os permisionamentos que a pessoa deu para o user no Microsoft Entra ID, não se aplica aos recursos
+### Lembrando que os modos de bloqueio dentro do RBAC seriam os Locks, de forma geral mas dessa forma necessita especificar de qual lock seja modification ou delete. Alem desse, o ReadOnly, que tem a funcao de designar apenas a leitura mas deixando bloquado a alteracao de delete e modification juntos
+
+## Praticando gerenciamento de assinaturas
+![image](https://github.com/user-attachments/assets/46acacb7-1b2f-4c37-8487-53fedab32d07)
+- Precisa habilitar o gerenciamento de subscriptions em Properties, para que funcione o gerenciamento de assinaturas
+- Agora em Managment Groups (Apenas o tenant group nao é possivel remover nem mover)
+- Como as assinaturas herdam as regras de um Mangment Group, não precisa associar as politicas a uma assinatura, mas sim a managment group
+- Para adicionar permisionamentos RBAC é necessario ir em IAM
+![image](https://github.com/user-attachments/assets/43dd9462-5d34-4f27-8a30-6093768ccfc6)
+- Adicionar uma Role Assignment
+![image](https://github.com/user-attachments/assets/5c18deed-7b42-4746-a01c-d7996a767dcb)
+
+![image](https://github.com/user-attachments/assets/1f4a0fd8-b238-4fc3-9f15-de148eac5bff)
+
+- é importante lembrar, que as roles custom servem quando quer que faça algo em especifico que o sistema não dispõe
+![image](https://github.com/user-attachments/assets/c488da22-7a1e-491d-80a0-8da5a369b887)
+
+### As tags ajudam a rastrear custos por projeto ou setor e, com políticas, garantem que todos os recursos estejam corretamente rotulados.
