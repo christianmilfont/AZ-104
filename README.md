@@ -25,3 +25,6 @@
 - No laboratório, qual é a principal razão para se usar o conceito de Vnet de hub e spoke?
 - Para segmentar redes e isolar serviços, aumentando a segurança e evitando a comunicação entre Vnets sem necessidade.
 - Criar um emparelhamento global entre as Vnets é a configuração necessaroa para que as que estejam em regioes diferentes possam comunicar-se entre si utilizando o emparelhamento 
+- As rotas definidas pelo usuário permitem que o administrador personalize o tráfego de rede, enquanto as rotas de sistema são criadas automaticamente pelo Azure
+- Pontos de extremidade de serviço são usados para limitar o acesso à rede e permitir comunicação entre máquinas virtuais dentro de uma rede virtual, sem precisar de acesso à internet
+- A tabela de rotas define um conjunto de regras para o tráfego de rede dentro da sub-rede, podendo substituir ou adicionar rotas de sistema padrão
